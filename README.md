@@ -22,7 +22,7 @@ Following the instruction in [spconv](https://github.com/traveller59/spconv):
 4. navigate into `spconv` directory, then run `python setup.py bdist_wheel`
 5. `cd ./dist`, then install the wheels by `pip install [WHEELS_NAME]` or `pip3 install [WHEELS_NAME]`
 
-##### Common Build Problems and Possible Solutions
+#### Common Build Problems and Possible Solutions
 1. CUDA not found
 
 Ensure CUDA is installed with proper nvidia graphics driver. Ensure that cudnn has been installed correctly.
@@ -30,6 +30,18 @@ Ensure CUDA is installed with proper nvidia graphics driver. Ensure that cudnn h
 2. `/usr/local/cuda/lib64/xxx.so` is required by xxx file
 
 If your CUDA installation is not placed in `/usr/local`, e.g. directly `apt install nvidia-cuda-toolkit`, please figure out the directory of `bin` and `lib64`, and soft link the installation directory to target directory (you can use `sudo ln -s [LINK_NAME]`).
+
+#### SCC Build
+Please refer to `/projectnb/ece601/lyft` directory. The spconv binary in that directory is complied on SCC with particular version of python3, glibc and CUDA. The config of modules: 
+```
+module load python3/3.6.5
+module load cuda/10.1
+module load pytorch/1.3
+module load gcc/7.4.0
+module load boost
+module load cmake
+```
+In `scripts` directory, there are also some scripts to run the training on SCC with GPU access.
 
 ### SECOND
 1. Install all dependencies (for `conda` user)
