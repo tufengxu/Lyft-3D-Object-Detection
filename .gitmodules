@@ -1,3 +1,6 @@
 [submodule "second.pytorch"]
 	path = second.pytorch
 	url = https://github.com/YUHZ-ACA/second.pytorch.git
+[submodule "nuscenes-devkit"]
+	path = nuscenes-devkit
+	url = https://github.com/YUHZ-ACA/nuscenes-devkit.git
