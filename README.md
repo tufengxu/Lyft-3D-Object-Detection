@@ -31,6 +31,8 @@ Ensure CUDA is installed with proper nvidia graphics driver. Ensure that cudnn h
 
 If your CUDA installation is not placed in `/usr/local`, e.g. directly `apt install nvidia-cuda-toolkit`, please figure out the directory of `bin` and `lib64`, and soft link the installation directory to target directory (you can use `sudo ln -s [LINK_NAME]`).
 
+If you don't have the permission to use sudo (e.g. on a computing cluster). You can try to fix the problem by downloading a copy of `PyTorch` and modify the CMake File of caffe2 building. There are some hardcoded path of CUDA libs. Modifing those lines and rebuild wheels may solve the problem.
+
 #### SCC Build
 Please refer to `/projectnb/ece601/lyft` directory. The spconv binary in that directory is complied on SCC with particular version of python3, glibc and CUDA. The config of modules: 
 ```
@@ -43,11 +45,14 @@ module load cmake
 ```
 In `scripts` directory, there are also some scripts to run the training on SCC with GPU access.
 
+There are pre-built binaraies of spconv. The directory name means the type of GPU. You can check the GPU name of your node then install the pre-built wheels
+
+
 ### SECOND
 1. Install all dependencies (for `conda` user)
 ```bash
 conda install scikit-image scipy numba pillow matplotlib
-pip install fire tensorboardX protobuf opencv-python nuscenes-devkit lyft_dataset_sdk
+pip install fire tensorboardX protobuf opencv-python lyft_dataset_sdk
 ```
 
 2. Install SECOND (for `conda` user)
@@ -56,20 +61,71 @@ At top level of SECOND, use
 conda develop .
 ```
 
+### NUSCENES-DEVKIT
+Using the `nuscenes-devkit` in this repo, and add it to `PYTHONPATH` (or `conda develop .`)
+
 ## Train and Evaluation
 
 ### Data Preparation
+Download Lyft Level 5 Dataset. and rename the directory in following format:
+```
+├── test
+│   ├── images
+│   ├── lidar
+│   ├── maps
+│   └── v1.0-test
+└── train
+    ├── images
+    ├── lidar
+    ├── maps
+    └── v1.0-trainval
+```
 
+Then use 
+```
+python second.pytorch/second/create_data.py nuscenes_data_prep --data_root=NUSCENES_TRAINVAL_DATASET_ROOT --version="v1.0-trainval" --max_sweeps=10 --dataset_name="NuScenesDataset"
+```
+to generate database
 
-### Train SECOND / PointPillars
+Finally, modify config files
+```
+train_input_reader: {
+  ...
+  database_sampler {
+    database_info_path: "/path/to/dataset_dbinfos_train.pkl"
+    ...
+  }
+  dataset: {
+    dataset_class_name: "DATASET_NAME"
+    kitti_info_path: "/path/to/dataset_infos_train.pkl"
+    kitti_root_path: "DATASET_ROOT"
+  }
+}
+...
+eval_input_reader: {
+  ...
+  dataset: {
+    dataset_class_name: "DATASET_NAME"
+    kitti_info_path: "/path/to/dataset_infos_val.pkl"
+    kitti_root_path: "DATASET_ROOT"
+  }
+}
+```
 
+### Train
+```
+python ./pytorch/train.py train --config_path=./configs/car.fhd.config --model_dir=/path/to/model_dir -resume
+```
 
+### Eval
+Save the result:
+```
+python ./pytorch/train.py evaluate --config_path=./configs/car.fhd.config --model_dir=/path/to/model_dir --measure_time=True --batch_size=1
+```
+using functions in `./scripts/eval.py` to get Lyft mAP evaluations.
 
-## Utils
-Use `utils/convert_to_kitti.py` to convert the Dataset from nuScene (Lyft/Kaggle) to KITTI.
+Pretrained model [here](https://drive.google.com/open?id=1aN6Trusc-4_ozqFR72YZw1x_J41NXkM5https://drive.google.com/drive/u/1/folders/1aN6Trusc-4_ozqFR72YZw1x_J41NXkM5)
 
-*Note that `kitti.py` and `export_kitti.py` are based on the code in [lyft_dataset_sdk](https://github.com/lyft/nuscenes-devkit)*
-
-## Sprint 1
-Please check out the [slides](./docs/sprint1_slides.pdf)
+## Result
+Check [`results`](./results)
 
