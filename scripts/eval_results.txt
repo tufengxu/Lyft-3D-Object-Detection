@@ -1,0 +1,100 @@
+Class_names =  ['animal', 'bicycle', 'bus', 'car', 'motorcycle', 'other_vehicle', 'pedestrian', 'truck']
+Average per class mean average precision =  0.16243377272560627
+('animal', 0.0)
+('bicycle', 0.06384119741837234)
+('bus', 0.20614504044082288)
+('car', 0.5863012685331334)
+('motorcycle', 0.0)
+('other_vehicle', 0.3359496202453181)
+('pedestrian', 0.036419211933693144)
+('truck', 0.07081384323351043)
+Class_names =  ['animal', 'bicycle', 'bus', 'car', 'motorcycle', 'other_vehicle', 'pedestrian', 'truck']
+Average per class mean average precision =  0.14446052352700633
+('animal', 0.0)
+('bicycle', 0.04578692000014707)
+('bus', 0.15513126513977343)
+('car', 0.5657789082073937)
+('motorcycle', 0.0)
+('other_vehicle', 0.3354120576768749)
+('pedestrian', 0.019462430425388394)
+('truck', 0.03411260676647323)
+Class_names =  ['animal', 'bicycle', 'bus', 'car', 'motorcycle', 'other_vehicle', 'pedestrian', 'truck']
+Average per class mean average precision =  0.12299548355557655
+('animal', 0.0)
+('bicycle', 0.012410094516403989)
+('bus', 0.0892329973096173)
+('car', 0.5208749460921804)
+('motorcycle', 0.0)
+('other_vehicle', 0.3354120576768749)
+('pedestrian', 0.007829614152308127)
+('truck', 0.018204158697227708)
+Class_names =  ['animal', 'bicycle', 'bus', 'car', 'motorcycle', 'other_vehicle', 'pedestrian', 'truck']
+Average per class mean average precision =  0.1059596271883809
+('animal', 0.0)
+('bicycle', 0.001025862978986282)
+('bus', 0.05230651641549831)
+('car', 0.4455755521248554)
+('motorcycle', 0.0)
+('other_vehicle', 0.33300783006997786)
+('pedestrian', 0.003969828844912965)
+('truck', 0.01179142707281641)
+Class_names =  ['animal', 'bicycle', 'bus', 'car', 'motorcycle', 'other_vehicle', 'pedestrian', 'truck']
+Average per class mean average precision =  0.08667854081057802
+('animal', 0.0)
+('bicycle', 9.445671442657545e-05)
+('bus', 0.028718104141649173)
+('car', 0.32964679263377455)
+('motorcycle', 0.0)
+('other_vehicle', 0.3275449050124752)
+('pedestrian', 0.0014937091899346756)
+('truck', 0.00593035879236396)
+Class_names =  ['animal', 'bicycle', 'bus', 'car', 'motorcycle', 'other_vehicle', 'pedestrian', 'truck']
+Average per class mean average precision =  0.05746858198742778
+('animal', 0.0)
+('bicycle', 3.4231921266581086e-05)
+('bus', 0.008575813846583067)
+('car', 0.18935934120215486)
+('motorcycle', 0.0)
+('other_vehicle', 0.25845526279833536)
+('pedestrian', 3.3830643797151464e-06)
+('truck', 0.0033206230667026868)
+Class_names =  ['animal', 'bicycle', 'bus', 'car', 'motorcycle', 'other_vehicle', 'pedestrian', 'truck']
+Average per class mean average precision =  0.023540657492072757
+('animal', 0.0)
+('bicycle', 0.0)
+('bus', 0.000626606768775023)
+('car', 0.07029743114491663)
+('motorcycle', 0.0)
+('other_vehicle', 0.11740122202289043)
+('pedestrian', 0.0)
+('truck', 0.0)
+Class_names =  ['animal', 'bicycle', 'bus', 'car', 'motorcycle', 'other_vehicle', 'pedestrian', 'truck']
+Average per class mean average precision =  0.003952616107795662
+('animal', 0.0)
+('bicycle', 0.0)
+('bus', 0.0)
+('car', 0.014379190124951133)
+('motorcycle', 0.0)
+('other_vehicle', 0.01724173873741416)
+('pedestrian', 0.0)
+('truck', 0.0)
+Class_names =  ['animal', 'bicycle', 'bus', 'car', 'motorcycle', 'other_vehicle', 'pedestrian', 'truck']
+Average per class mean average precision =  0.00013036745123572724
+('animal', 0.0)
+('bicycle', 0.0)
+('bus', 0.0)
+('car', 0.0006946219206553542)
+('motorcycle', 0.0)
+('other_vehicle', 0.0003483176892304637)
+('pedestrian', 0.0)
+('truck', 0.0)
+Class_names =  ['animal', 'bicycle', 'bus', 'car', 'motorcycle', 'other_vehicle', 'pedestrian', 'truck']
+Average per class mean average precision =  7.703180046624241e-09
+('animal', 0.0)
+('bicycle', 0.0)
+('bus', 0.0)
+('car', 6.162544037299393e-08)
+('motorcycle', 0.0)
+('other_vehicle', 0.0)
+('pedestrian', 0.0)
+('truck', 0.0)

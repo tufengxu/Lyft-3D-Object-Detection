@@ -1,0 +1,12 @@
+
+Average mAP at thresholds: 0.60:
+Class_names = ['animal', 'bicycle', 'bus', 'car', 'motorcycle', 'other_vehicle', 'pedestrian', 'truck']
+Average per class mean average precision = 0.13677176072261318
+('animal', 0.0)
+('bicycle', 0.01768650522980465)
+('bus', 0.17524875090173567)
+('car', 0.5180954826152581)
+('motorcycle', 0.0)
+('other_vehicle', 0.34508287628908074)
+('pedestrian', 0.004846350237777266)
+('truck', 0.03321412050724913)
