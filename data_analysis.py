@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+# Reference: https://www.kaggle.com/rishabhiitbhu/eda-understanding-the-dataset-with-3d-plots
+
+import os
 import pdb
 import cv2
 import pandas as pd
@@ -133,7 +136,6 @@ def plot_box(box, axis, view, colors, normalize=False, linewidth=1.0):
             color=colors[2],
             linewidth=linewidth,
         )
-
     # Draw front (first 4 corners) and rear (last 4 corners) rectangles(3d)/lines(2d)
     draw_rect(corners.T[:4], colors[0]) #4x3
     draw_rect(corners.T[4:], colors[1])
@@ -176,16 +178,15 @@ def draw_3d_plot(idx, lidar_token):
 
 ## load data, you only have to do it once
     
-#DATA_PATH =r'C:\Users\storm\Documents\3d-object-detection-for-autonomous-vehicles\train_data'+os.sep
-#train = pd.read_csv(DATA_PATH + 'train.csv')
-#sample_submission = pd.read_csv(DATA_PATH + 'sample_submission.csv')
-## load lyft dataset
-#lyftdata = LyftDataset(data_path=DATA_PATH, json_path=DATA_PATH+os.sep+'data')
+DATA_PATH =r'C:\Users\storm\Documents\3d-object-detection-for-autonomous-vehicles\train_data'+os.sep
+train = pd.read_csv(DATA_PATH + 'train.csv')
+sample_submission = pd.read_csv(DATA_PATH + 'sample_submission.csv')
+lyftdata = LyftDataset(data_path=DATA_PATH, json_path=DATA_PATH+os.sep+'data')
 
 ## show point cloud interactively
 
 cat_token = lyftdata.category[0]['token']
-train = pd.read_csv(r'C:\Users\storm\Documents\3d-object-detection-for-autonomous-vehicles\train_data\train.csv')
+train = pd.read_csv(DATA_PATH+os.sep+'train.csv')
 token0 = train.iloc[0]['Id']
 my_sample = lyftdata.get('sample', token0)
 lyftdata.render_sample_3d_interactive(my_sample['token'], render_sample=False)
@@ -244,143 +245,13 @@ lyftdata.render_sample(token0)
 
 ## 3D visualization of a scene
 ## Be sure to make a folder named tmp in data_path
+
 my_scene = lyftdata.get('scene',  my_sample['scene_token'])
 first_sample_token = my_scene['first_sample_token']
 sample = lyftdata.get('sample', first_sample_token)
 lidar_token = sample['data']['LIDAR_TOP']
 filename = draw_3d_plot(0, lidar_token)
 Image.open(filename)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
