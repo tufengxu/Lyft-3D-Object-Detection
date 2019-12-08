@@ -142,7 +142,7 @@ Check [`results`](./results)
 9. tqdm
 10. os
 
-### DATA_PATH confiduration
+### DATA_PATH configuration
 Change data_path to be lyft_dataset_root_path\train_data\
 For example, in my computer, DATA_PATH will be 'C:\Users\username\Documents\3d-object-detection-for-autonomous-vehicles\train_data\'
 
