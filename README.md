@@ -130,7 +130,7 @@ Pretrained model [here](https://drive.google.com/open?id=1aN6Trusc-4_ozqFR72YZw1
 Check [`results`](./results)
 
 ## Data visualization
-###Libraries needed:
+### Libraries needed:
 1. pandas
 2. numpy
 3. PIL
@@ -150,3 +150,4 @@ For example, in my computer, DATA_PATH will be 'C:\Users\username\Documents\3d-o
 
 
 
+ 
