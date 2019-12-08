@@ -129,3 +129,24 @@ Pretrained model [here](https://drive.google.com/open?id=1aN6Trusc-4_ozqFR72YZw1
 ## Result
 Check [`results`](./results)
 
+## Data visualization
+###Libraries needed:
+1. pandas
+2. numpy
+3. PIL
+4. pathlib
+5. matplotlib
+6. mpl_toolkits
+7. lyft_dataset_sdk
+8. moviepy
+9. tqdm
+10. os
+
+### DATA_PATH confiduration
+Change data_path to be lyft_dataset_root_path\train_data\
+For example, in my computer, DATA_PATH will be 'C:\Users\username\Documents\3d-object-detection-for-autonomous-vehicles\train_data\'
+
+
+
+
+
