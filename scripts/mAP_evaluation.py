@@ -409,7 +409,7 @@ if __name__ == "__main__":
     if output_path is None:
         output_path = Path(__file__).resolve().parent / f'eval@{args.iou_threshold:.2f}.txt'
     else:
-        op = Path(output_path).resolve()
+        op = Path(output_path)
         output_path = op.parent / f'{op.stem}@{args.iou_threshold:.2f}.txt' 
 
     with open(args.pred_file) as f:
