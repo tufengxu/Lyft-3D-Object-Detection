@@ -7,10 +7,14 @@ EC601 Project
 * CUDA 10 and cudnn 7
 The build processes have only be tested on Ubuntu 18.04 and 19.10
 
+**Don't use the official version of NuScenes-Devkit, SECOND and Lyft_Dataset_SDK, our developments are based on the modified version of those repos. Use the packages in this repo.** (Efforts are made in fixing and adding feature to those tool-kits as well.)
+
 ## Clone the repository
 ```bash
 git clone git@github.com:YUHZ-ACA/Lyft-3D-Object-Detection.git --recursive
 ```
+
+>We are using different fork and submodules for developing. Check out fork `YUHZ-ACA/Lyft-3D-Object-Detection` and all the sub-modules for detail. 
 
 ## Build and Install
 Before training and evaluation, we have to build and install some binaries first.
@@ -124,27 +128,38 @@ python ./pytorch/train.py evaluate --config_path=./configs/car.fhd.config --mode
 ```
 using functions in `./scripts/eval.py` to get Lyft mAP evaluations.
 
-Pretrained model [here](https://drive.google.com/open?id=1aN6Trusc-4_ozqFR72YZw1x_J41NXkM5https://drive.google.com/drive/u/1/folders/1aN6Trusc-4_ozqFR72YZw1x_J41NXkM5)
+## Pre-Trained Model
+Pre-trained model [here](https://drive.google.com/open?id=1aN6Trusc-4_ozqFR72YZw1x_J41NXkM5https://drive.google.com/drive/u/1/folders/1aN6Trusc-4_ozqFR72YZw1x_J41NXkM5)
+
+You can use this to run the evaluations or resume training process to obtain better result. Note that, the data preparation steps are required to evaluate the dataset.
 
 ## Result
 Check [`results`](./results)
 
-## Data visualization
-### Libraries needed:
-1. pandas
-2. numpy
-3. PIL
-4. pathlib
-5. matplotlib
-6. mpl_toolkits
-7. lyft_dataset_sdk
-8. moviepy
-9. tqdm
-10. os
+## Prediction Visualization
 
-### DATA_PATH configuration
-Change data_path to be lyft_dataset_root_path\train_data\
-For example, in my computer, DATA_PATH will be 'C:\Users\username\Documents\3d-object-detection-for-autonomous-vehicles\train_data\'
+Use the Python scripts `./scripts/visualize_result.py` to visualize the prediction result. Don't forget to modify the path of prediction results and Lyft Dataset.
+
+### Modified Lyft Datset SDK
+In order to visualize the result, please use our own version of `lyft_dataset_sdk` which add support to draw customize box in image and point cloud.
+
+Here are some sample visualization of our prediction. Check out this [link](https://drive.google.com/open?id=1Dt1vNy0v5Ug6XprxbV3tfvJUO7QTagG8) for more visualizations.
+
+* Sample 1
+![](./results/sample_viz/sample1.png)
+
+* Sample 2
+![](./results/sample_viz/sample2.png)
+
+* Sample 3
+![](./results/sample_viz/sample3.png)
+
+## Misc
+
+There are some other helper script in directory `./scripts` that might be helpful.
+
+## License
+MIT
 
 
 
